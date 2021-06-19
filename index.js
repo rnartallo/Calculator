@@ -1,6 +1,8 @@
 const readline = require('readline-sync');
-console.log('Welcome to the calculator');
-console.log('Please enter an operation:');
+function printwelcomemessage(){
+console.log('Welcome to the calculator');}
+
+function oneCalculation(){console.log('Please enter an operation:');
 const op = readline.prompt()
 console.log('How many numbers do you want to ' + String(op)+ '?');
 const n = parseInt(readline.prompt());
@@ -22,4 +24,7 @@ for (let i=1; i<n;i++){
     }
 }
 
-console.log('The answer is: '+ String(total));
+console.log('The answer is: '+ String(total));}
+
+printwelcomemessage()
+oneCalculation()
