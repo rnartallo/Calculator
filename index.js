@@ -13,9 +13,18 @@ function printwelcomemessage(){
     return typeofcalc;
     }
 
+function validOperator(op){
+    return ['+', '-', '*', '/'].includes(op)
+}
+
 function oneArithmeticCalculation(){
-        console.log('Please enter an operation:');
-    const op = readline.prompt();
+    console.log('Please enter an operation:');
+    var op = readline.prompt();
+    while (!validOperator(op)){
+        console.log('That is not a valid operator')
+        console.log('Please enter a valid operator')
+        op = readline.prompt();
+    }
     console.log('How many numbers do you want to ' + String(op)+ '?');
     const n = parseInt(readline.prompt());
     arr = Array(n);
@@ -33,6 +42,7 @@ function oneArithmeticCalculation(){
     else if (op =="/"){
     var arr = arr.filter(arr => arr!==0)
     var reducer = (accumulator, currentValue) => accumulator / currentValue;}
+    else {throw "That is not a valid operation please try again"}
     total = arr.reduce(reducer)
     //for (let i=1; i<n;i++){
       //  if (op =="+"){
@@ -47,7 +57,6 @@ function oneArithmeticCalculation(){
     //}
     
     console.log('The answer is: '+ String(total));}
-
 
     function oneVowelCalculation(){
         console.log('Please enter a phrase:');
@@ -81,4 +90,3 @@ if (typeofcalc==1){
 else if (typeofcalc==2){
     oneVowelCalculation()
 }
-
